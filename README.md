@@ -9,7 +9,7 @@ Student starter exercises for Days 1–5 of the Advanced Radio Communications co
 3. Fill in each `YOUR CODE HERE` line before running that section.
 4. Read the plot labels and command-window prompts, then try the suggested one-number variations.
 
-These exercises do not require Pluto SDR hardware. Instructor solutions and trainer guides are intentionally not included.
+These exercises do not require Pluto SDR hardware. The Day 1 spectrum exercise works from a capture file supplied in `data/`, so it runs anywhere. Instructor solutions and trainer guides are intentionally not included.
 
 ## Exercise map
 
@@ -20,6 +20,7 @@ These exercises do not require Pluto SDR hardware. Instructor solutions and trai
 - First sampled signal and spectrum
 - Mixer sum and difference frequencies
 - Signal regeneration
+- Real spectrum from a captured signal (`ex6_real_spectrum_student.m`)
 
 ### Day 2 — RF waves and transmission lines
 
@@ -50,8 +51,27 @@ These exercises do not require Pluto SDR hardware. Instructor solutions and trai
 - Radiation patterns
 - End-to-end link budget
 
+## Exploring further
+
+The `day01/explore*.m` scripts are not exercises. Each one is short, complete and runnable, and shows a single idea you can change and re-run to build intuition. Every script ends with a `TRY THIS` block suggesting two or three experiments and what you should expect to see.
+
+| Script | What it shows |
+| --- | --- |
+| `explore01_resolution.m` | How the number of samples you use sets your frequency resolution |
+| `explore02_windowing.m` | Why a window helps, and what spectral leakage looks like without one |
+| `explore03_zoom_station.m` | Zooming in on one station to see its shape and width |
+| `explore04_iq_time.m` | What I and Q actually look like in the time domain |
+| `explore05_gain_noise_floor.m` | How receiver gain moves the noise floor |
+| `explore06_relative_power.m` | Measuring the difference between two signals in dB |
+
+## Sample data
+
+`data/` holds two captures of the FM broadcast band centred on 98 MHz, one at high receiver gain and one at low gain, in the same format a radio would produce. Load one with `load('data/fm_capture_98MHz.mat')` to get the complex samples plus the sample rate and centre frequency.
+
+`make_synthetic_capture.m` regenerates these files. To use your own recording instead, save your samples in the same format and point the scripts at your file.
+
 ## Repository contents
 
-Only student-facing starter scripts are included. Filenames ending in `_student.m` are intended for classroom use and independent practice.
+Only student-facing starter scripts, exploration scripts and sample data are included. Filenames ending in `_student.m` are intended for classroom use and independent practice.
 
 Copyright © 2026 Beacon Red Investment – Sole Proprietorship LLC. All rights reserved.
