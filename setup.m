@@ -5,8 +5,14 @@
 %  Downloads, into the folder you are in right now:
 %    - the spectrum exercise      ex6_real_spectrum_student.m
 %    - the challenge problems     ex6_challenges.m
+%    - the two challenge helpers  hint.m  and  selfcheck.m
 %    - the two sample captures    fm_capture_98MHz.mat  and  ..._lowgain.mat
 %    - six short exploration scripts, for when you finish early
+%
+%  hint.m and selfcheck.m are what make the challenge problems work on
+%  your own: hint(2) gives you the next hint for Challenge 2, and
+%  selfcheck(2, myValue) tells you whether your answer is right without
+%  telling you what the answer is.
 %  The files are saved with plain names, so the exercises find the
 %  captures straight away. A second copy of the two captures is placed
 %  in a data/ folder, because the exploration scripts look for them
@@ -33,6 +39,8 @@ base = 'https://raw.githubusercontent.com/nadeembinshajahan/advanced-radio-comms
 files = {
     'day02/ex6_real_spectrum_student.m',  'ex6_real_spectrum_student.m'
     'day02/ex6_challenges.m',             'ex6_challenges.m'
+    'day02/hint.m',                       'hint.m'
+    'day02/selfcheck.m',                  'selfcheck.m'
     'data/fm_capture_98MHz.mat',          'fm_capture_98MHz.mat'
     'data/fm_capture_98MHz_lowgain.mat',  'fm_capture_98MHz_lowgain.mat'
     'day01/explore01_resolution.m',       'explore01_resolution.m'
@@ -101,7 +109,8 @@ fprintf('%d of %d files are here.\n', numel(got), numel(got) + numel(missed));
 if isempty(missed)
     fprintf('\nYou are ready. Open  ex6_real_spectrum_student.m  and start\n');
     fprintf('at Section 1. The challenge problems are in  ex6_challenges.m\n');
-    fprintf('and start at Section 0.\n');
+    fprintf('and start at Section 0. In the challenges, type  hint(1)  for a\n');
+    fprintf('hint and  selfcheck(1, myValue)  to test an answer.\n');
 else
     fprintf('\nThese did not arrive:\n');
     for k = 1:numel(missed)
