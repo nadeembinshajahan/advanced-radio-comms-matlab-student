@@ -31,7 +31,7 @@ These exercises do not require Pluto SDR hardware. The real-spectrum exercise wo
 - Mixer sum and difference frequencies
 - Signal regeneration
 - Real spectrum from a captured signal (`ex6_real_spectrum_student.m`)
-- Spectrum challenges — open-ended measurement problems (`ex6_challenges.m`)
+- Spectrum challenges — open-ended measurement problems with built-in hints and self-checks (`ex6_challenges.m`)
 
 `ex6_real_spectrum_student.m` and `ex6_challenges.m` also appear under `day02/`. **`day02/` is the canonical location** — the real-spectrum exercise belongs to Day 2. The `day01/` copies are kept in place, unchanged, because links to them are already in circulation.
 
@@ -43,7 +43,7 @@ These exercises do not require Pluto SDR hardware. The real-spectrum exercise wo
 - Standing waves
 - Wave behavior and path loss
 - Real spectrum from a captured signal (`ex6_real_spectrum_student.m`)
-- Spectrum challenges — open-ended measurement problems (`ex6_challenges.m`)
+- Spectrum challenges — open-ended measurement problems, with progressive hints and answer checking built in (`ex6_challenges.m`, `hint.m`, `selfcheck.m`)
 
 ### Day 3 — Analog and digital modulation
 
@@ -68,7 +68,21 @@ These exercises do not require Pluto SDR hardware. The real-spectrum exercise wo
 
 ## Challenge problems
 
-`day02/ex6_challenges.m` is a set of seven open-ended problems built on the same captures. They are questions, not procedures: you are given the goal and you work out the method. Several have no single right answer, and on some of them two people will legitimately disagree — working out why is the point. Allow about two hours.
+`day02/ex6_challenges.m` is a set of open-ended problems built on the same captures: six core challenges plus one optional stretch challenge. They are questions, not procedures — you are given the goal and you work out the method. Several have no single right answer. Allow about two hours for the six; the stretch one is extra.
+
+They are designed to be done on your own. Two helpers sit alongside the file, and nothing is printed until you ask for it, so you cannot spoil a challenge by reading the code.
+
+| Type this | What happens |
+| --- | --- |
+| `hint(2)` | The first hint for Challenge 2. Call it again for the next one. |
+| `hint(2,'reset')` | Start that challenge's hints again from the beginning. |
+| `selfcheck(2, myValue)` | Checks your number and tells you whether it is right, close, or wrong in a way it recognises. |
+
+There are three hints per challenge and they get more specific: the first reframes the question, the second names the method, the third gives you the shape of the calculation. None of them gives you the answer.
+
+`selfcheck` never prints the correct value either. When it recognises a common mistake it names it — for example, it can tell when a signal level came from reading a single FFT point rather than measuring the whole channel, and it will say so and send you back to try a different number of samples. On the judgement questions, where there is no single right number, it asks you questions instead and tells you what a good answer has to account for.
+
+Every challenge also carries a short "you are done when..." list and a time estimate, so you can tell when to stop without asking anybody.
 
 ## Exploring further
 
