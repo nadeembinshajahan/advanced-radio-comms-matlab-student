@@ -21,6 +21,7 @@ These exercises do not require Pluto SDR hardware. The Day 1 spectrum exercise w
 - Mixer sum and difference frequencies
 - Signal regeneration
 - Real spectrum from a captured signal (`ex6_real_spectrum_student.m`)
+- Spectrum challenges — open-ended measurement problems (`ex6_challenges.m`)
 
 ### Day 2 — RF waves and transmission lines
 
@@ -50,6 +51,10 @@ These exercises do not require Pluto SDR hardware. The Day 1 spectrum exercise w
 - Antenna gain
 - Radiation patterns
 - End-to-end link budget
+
+## Challenge problems
+
+`day01/ex6_challenges.m` is a set of seven open-ended problems built on the same captures. They are questions, not procedures: you are given the goal and you work out the method. Several have no single right answer, and on some of them two people will legitimately disagree — working out why is the point. Allow about two hours.
 
 ## Exploring further
 
