@@ -1,5 +1,15 @@
 # Advanced Radio Communications — Student MATLAB Exercises
 
+## Quick start
+
+Paste this one line into MATLAB or MATLAB Online and press Enter:
+
+```matlab
+websave('setup.m','https://raw.githubusercontent.com/nadeembinshajahan/advanced-radio-comms-matlab-student/main/setup.m'); setup
+```
+
+It downloads the exercises and the sample data into the folder you are currently in.
+
 Student starter exercises for Days 1–5 of the Advanced Radio Communications course. Each script contains guided sections and clearly marked `YOUR CODE HERE` portions for students to complete.
 
 ## Getting started
@@ -9,7 +19,7 @@ Student starter exercises for Days 1–5 of the Advanced Radio Communications co
 3. Fill in each `YOUR CODE HERE` line before running that section.
 4. Read the plot labels and command-window prompts, then try the suggested one-number variations.
 
-These exercises do not require Pluto SDR hardware. The Day 1 spectrum exercise works from a capture file supplied in `data/`, so it runs anywhere. Instructor solutions and trainer guides are intentionally not included.
+These exercises do not require Pluto SDR hardware. The real-spectrum exercise works from a capture file supplied in `data/`, so it runs anywhere. Instructor solutions and trainer guides are intentionally not included.
 
 ## Exercise map
 
@@ -23,6 +33,8 @@ These exercises do not require Pluto SDR hardware. The Day 1 spectrum exercise w
 - Real spectrum from a captured signal (`ex6_real_spectrum_student.m`)
 - Spectrum challenges — open-ended measurement problems (`ex6_challenges.m`)
 
+`ex6_real_spectrum_student.m` and `ex6_challenges.m` also appear under `day02/`. **`day02/` is the canonical location** — the real-spectrum exercise belongs to Day 2. The `day01/` copies are kept in place, unchanged, because links to them are already in circulation.
+
 ### Day 2 — RF waves and transmission lines
 
 - Reflection coefficient and VSWR
@@ -30,6 +42,8 @@ These exercises do not require Pluto SDR hardware. The Day 1 spectrum exercise w
 - Polarization mismatch
 - Standing waves
 - Wave behavior and path loss
+- Real spectrum from a captured signal (`ex6_real_spectrum_student.m`)
+- Spectrum challenges — open-ended measurement problems (`ex6_challenges.m`)
 
 ### Day 3 — Analog and digital modulation
 
@@ -54,7 +68,7 @@ These exercises do not require Pluto SDR hardware. The Day 1 spectrum exercise w
 
 ## Challenge problems
 
-`day01/ex6_challenges.m` is a set of seven open-ended problems built on the same captures. They are questions, not procedures: you are given the goal and you work out the method. Several have no single right answer, and on some of them two people will legitimately disagree — working out why is the point. Allow about two hours.
+`day02/ex6_challenges.m` is a set of seven open-ended problems built on the same captures. They are questions, not procedures: you are given the goal and you work out the method. Several have no single right answer, and on some of them two people will legitimately disagree — working out why is the point. Allow about two hours.
 
 ## Exploring further
 
@@ -77,6 +91,6 @@ The `day01/explore*.m` scripts are not exercises. Each one is short, complete an
 
 ## Repository contents
 
-Only student-facing starter scripts, exploration scripts and sample data are included. Filenames ending in `_student.m` are intended for classroom use and independent practice.
+Only student-facing starter scripts, exploration scripts, sample data and the `setup.m` downloader are included. Filenames ending in `_student.m` are intended for classroom use and independent practice.
 
 Copyright © 2026 Beacon Red Investment – Sole Proprietorship LLC. All rights reserved.
