@@ -1,7 +1,7 @@
 function selfcheck(k, value)
 %SELFCHECK  Test your own answer to a challenge problem.
 %
-%   selfcheck(3, 98.0)   tests your answer to Challenge 3.
+%   selfcheck(4, 12.5)   tests 12.5 as your answer to Challenge 4.
 %   selfcheck(5)         for the judgement questions, asks you the
 %                        questions a good answer has to survive.
 %   selfcheck            prints this summary.
@@ -32,7 +32,7 @@ end
 if ~isnumeric(k) || ~isscalar(k) || ~isreal(k) || ~isfinite(k) || ...
         k < 1 || k > n_challenges || k ~= fix(k)
     fprintf('\nselfcheck needs a challenge number from 1 to %d.\n', n_challenges);
-    fprintf('For example:  selfcheck(3, 98.0)\n\n');
+    fprintf('For example:  selfcheck(4, 12.5)\n\n');
     return
 end
 
@@ -107,7 +107,7 @@ elseif s > 0 && s < 2.5
     say('wave at 98.2 MHz.');
 elseif near(s, 15.96, 0.6)
     verdict('CORRECT');
-    say('At 98 MHz an 8.6 cm whip is about a thirty-fifth of a');
+    say('At 98.2 MHz an 8.6 cm whip is about a thirty-fifth of a');
     say('wavelength, so the resistance it offers is a fraction of an');
     say('ohm against a 50 ohm receiver input. Almost all the power');
     say('available at the antenna never gets into the radio. The');
@@ -407,10 +407,9 @@ end
 if near(v, 96.4, 0.8)
     verdict('NOT YET');
     say('You have counted the fake peak from Challenge 3 as signal.');
-    say('It is worth two to three percent of everything the radio');
-    say('recorded. Decide whether a fault inside your own receiver');
-    say('belongs in a figure you are calling signal, then say which');
-    say('choice you made and why.');
+    say('A fault inside your own receiver is not a transmission and it');
+    say('is not receiver noise either. Take it out, see what your');
+    say('figure does, and say in your answer which choice you made.');
 elseif v > 98.6
     verdict('NOT YET');
     say('Too high, and there is one usual reason: the noise level you');
@@ -429,8 +428,10 @@ elseif near(v, 40.9, 2.0)
     say('the radio recorded is the radio listening to itself.');
 elseif near(v, 3.6, 1.0)
     verdict('NOT YET');
-    say('That is the NOISE share at gain 50, not the signal share.');
-    say('The two have to add up to 100.');
+    say('That is the NOISE share at gain 50. The question asked for');
+    say('the share that is real radio signal. Careful when you turn');
+    say('one into the other: there is a third thing in this capture');
+    say('that is neither, and you met it in Challenge 3.');
 elseif near(v, 58.7, 2.0)
     verdict('NOT YET');
     say('That is the noise share of the gain 20 dB file. Two things');
@@ -484,18 +485,19 @@ end
 if v == 7
     verdict('NOT YET');
     say('Seven is what a rule gets when it only asks "is there');
-    say('something big here". Six of your seven are transmitters.');
-    say('The seventh is the peak you exposed in Challenge 3.');
-    say('Ask yourself what is transmitting in that slot. Nothing is.');
-    say('A regulator would be counting a fault in your receiver as an');
-    say('occupied channel.');
+    say('something big here". One of your seven slots holds the peak');
+    say('you exposed in Challenge 3. Ask what is transmitting in that');
+    say('slot. Nothing is - it is a fault inside your own receiver,');
+    say('and you are about to report it to a regulator as an occupied');
+    say('channel. Your rule needs a second condition.');
 elseif v == 5
     verdict('NOT YET');
-    say('Five is what the whole-slot-power rule gives on its own. It');
-    say('throws out the fault, which is good, but it throws out the');
-    say('two quietest real stations with it.');
-    say('Name the two slots you lost and look at them. Are they');
-    say('empty? If they are not, your rule is too blunt.');
+    say('Five is what the whole-slot-power rule gives on its own, and');
+    say('it is too blunt in both directions. Check two things before');
+    say('you sign it. First: is the slot you exposed in Challenge 3');
+    say('still inside your five? Second: plot each slot this rule');
+    say('dropped and ask whether it is really empty. Adding up power');
+    say('across a whole slot buries a quiet station in its own noise.');
 elseif v == 10
     verdict('NOT YET');
     say('Every slot occupied means your threshold is below the noise.');
@@ -656,7 +658,7 @@ end
 function usage(n_challenges)
 fprintf('\n');
 fprintf('SELF-CHECK FOR THE CHALLENGE PROBLEMS\n');
-fprintf('  selfcheck(3, 98.0)   test your answer to Challenge 3\n');
+fprintf('  selfcheck(4, 12.5)   test 12.5 as your answer to Challenge 4\n');
 fprintf('  selfcheck(7)         judgement questions, no number needed\n');
 fprintf('\n');
 fprintf('There are %d challenges. Each one tells you what number to\n', n_challenges);

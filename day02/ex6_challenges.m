@@ -30,7 +30,8 @@
 %     accident.
 %
 %  2) SELF-CHECK, when you have a number
-%     Type   selfcheck(3, 98.0)   to test your answer for Challenge 3.
+%     Type   selfcheck(3, 97.6)   to test 97.6 as your answer for
+%     Challenge 3.
 %     It tells you whether you are right, or close, or wrong in a way
 %     it recognises - and if it recognises the mistake it names it.
 %     It NEVER tells you the correct value. Getting there is your job.
